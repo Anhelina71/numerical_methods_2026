@@ -131,6 +131,15 @@ for xi, yi, ya, e in zip(x, y, y_approx, error):
 print("Дисперсії для різних степенів:")
 for i, v in enumerate(variances, start=1):
     print(f"Степінь {i}: {v:.4f}")
+degrees = np.arange(1, max_degree + 1)
+
+plt.figure()
+plt.plot(degrees, variances, marker='o')
+plt.xlabel("Степінь полінома")
+plt.ylabel("Дисперсія")
+plt.title("Залежність дисперсії від степеня полінома")
+plt.grid()
+plt.show()
 print("\nОптимальний степінь полінома:", optimal_m)
 print("\nПрогноз температур:")
 for xi, yi in zip(x_future, y_future):
