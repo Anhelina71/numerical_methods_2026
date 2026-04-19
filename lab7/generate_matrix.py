@@ -3,10 +3,6 @@ import numpy as np
 import random
 
 def generate_diag_dominant_matrix(n: int, seed: int = 42) -> np.ndarray:
-    """
-    Генерує матрицю розміру n×n з діагональним переважанням.
-    Діагональне переважання: |a_ii| > sum_{j≠i} |a_ij|
-    """
     rng = np.random.default_rng(seed)
     A = rng.uniform(-10.0, 10.0, size=(n, n))
 
@@ -20,12 +16,10 @@ def generate_diag_dominant_matrix(n: int, seed: int = 42) -> np.ndarray:
 
 
 def compute_b_vector(A: np.ndarray, x_true: np.ndarray) -> np.ndarray:
-    """Обчислює вектор вільних членів b = A * x_true."""
     return A @ x_true
 
 
 def save_matrix(A: np.ndarray, filename: str) -> None:
-    """Зберігає матрицю у текстовий файл."""
     n = A.shape[0]
     with open(filename, 'w') as f:
         f.write(f"{n}\n")
@@ -35,7 +29,6 @@ def save_matrix(A: np.ndarray, filename: str) -> None:
 
 
 def save_vector(b: np.ndarray, filename: str) -> None:
-    """Зберігає вектор у текстовий файл."""
     n = len(b)
     with open(filename, 'w') as f:
         f.write(f"{n}\n")

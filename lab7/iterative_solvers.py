@@ -1,9 +1,3 @@
-"""
-Ітераційні методи розв'язку СЛАР.
-Кожен метод повертає (x, iterations, converged, history_diff, history_res)
-  history_diff - ||x^{k+1} - x^k|| на кожній ітерації
-  history_res  - ||A x^k - b||     на кожній ітерації
-"""
 
 import numpy as np
 from utils import vec_norm_inf
